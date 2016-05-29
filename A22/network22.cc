@@ -20,34 +20,41 @@
 
 using namespace omnetpp;
 
-class network22 : public cSimpleModule{
+class node : public cSimpleModule{
     private:
     simtime_t timer;  // timeout
     cMessage *timerEvent;  // holds pointer to the timeout self-message
+    cMessage *event;
+    cMessage *finish;
+    A22 *respToMaster;
 
     public:
         int master;
-        network22();
-        virtual ~network22();
+        node();
+        virtual ~node();
     protected:
     virtual A22 *generateMessage();
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;
 };
 
-Define_Module(network22);
+Define_Module(node);
 
-network22::network22()
+node::node()
 {
     timerEvent = nullptr;
+    event = nullptr;
+    finish = nullptr;
 }
 
-network22::~network22()
+node::~node()
 {
     cancelAndDelete(timerEvent);
+    cancelAndDelete(event);
+    cancelAndDelete(finish);
 }
 
-void network22::initialize()
+void node::initialize()
 {
     // Initialize variables
   //  numSent = 0;
@@ -59,55 +66,98 @@ void network22::initialize()
 //    hopCountStats.setRangeAutoUpper(0, 10, 1.5);
 //    hopCountVector.setName("HopCount");
 
+    event = new cMessage("event");
+    finish = new cMessage("finish");
+
     timer = 0.08;
     timerEvent = new cMessage("timerEvent");
 
     // Master sends message
     master = par("master");
-    if (master == 1) {
+    /*if (master == 1) {
         // Boot the process scheduling the initial message as a self-message.
         A22 *msg = generateMessage();
         send(msg, "gate$o", 0);
-        send(msg, "gate$o", 1);
-    }
+        cMessage *copy = (cMessage *) msg->dup();
+        send(copy, "gate$o", 1);
+    }*/
     scheduleAt(simTime()+timer, timerEvent);
+    scheduleAt(simTime()+2.0, finish);
 }
 
-void network22::handleMessage(cMessage *msg)
+void node::handleMessage(cMessage *msg)
 {
-    if (msg == timerEvent) {
+    if(msg == finish)
+    {
+       if(master == 1)
+       {
+           cancelEvent(timerEvent);
+       }
+       else
+       {
+           cancelEvent(event);
+       }
+    }
+    else if (msg == timerEvent) {
         // master sends new message
         if(master == 1)
         {
-            EV << "Timer expired, sending new message and restarting timer\n";
             A22 *msg = generateMessage();
             send(msg, "gate$o", 0);
-            send(msg, "gate$o", 1);
+            A22 *copy = (A22 *) msg->dup();
+            send(copy, "gate$o", 1);
+            EV << "Timer expired, sending new message with prio " << msg->getPriority();
             scheduleAt(simTime()+timer, timerEvent);
+        }
+    }
+    else if(master == 0)
+    {
+        if(msg == event)
+        {
+            send(respToMaster, "gate$o", respToMaster->getGateIndex());
+            respToMaster = nullptr;
+        }
+        else
+        {
+            A22* ttmsg = check_and_cast<A22 *>(msg);
+            EV<< "priority " << ttmsg->getPriority();
+            simtime_t responsedelay = uniform(0,ttmsg->getPriority()) /1000;
+            simtime_t procdelay = par("delayTime");
+           // responsedelay += procdelay;
+
+
+            respToMaster = generateMessage();
+
+            cGate *arrivalGate = msg->getArrivalGate();
+            int index = arrivalGate->getIndex();
+            EV << "Arrival Gate: " << index << "\n";
+            EV << "Responsedelay: " << responsedelay;
+            respToMaster->setGateIndex(index);
+            delete msg;
+
+            scheduleAt(simTime()+responsedelay, event);
         }
     }
     else
     {
         A22* ttmsg = check_and_cast<A22 *>(msg);
-        simtime_t responsedelay = uniform(0,ttmsg->getPriority()) /1000;
-        simtime_t procdelay = par("delayTime");
-        responsedelay += procdelay;
-
+        EV << "Received Response from Slave with latency " << simTime() - ttmsg->getTimestamp();
         delete msg;
-
-        A22* nmsg = generateMessage();
     }
 }
 
-A22* network22::generateMessage()
+A22* node::generateMessage()
 {
     int prio = intuniform(0,3);
+    EV << "generated prio: " << prio << "\n";
     char msgname[20];
     sprintf(msgname, "Mastermsg-with-prio-%d", prio);
+
     A22* msg = new A22(msgname);
 
     msg->setPriority(prio);
     msg->setTimestamp(simTime());
 
+    EV << "stored prio: " << msg->getPriority() << "\n";
     return msg;
 }

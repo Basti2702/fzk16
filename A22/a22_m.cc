@@ -167,6 +167,7 @@ A22::A22(const char *name, int kind) : ::omnetpp::cMessage(name,kind)
 {
     this->priority = 0;
     this->timestamp = 0;
+    this->gateIndex = 0;
 }
 
 A22::A22(const A22& other) : ::omnetpp::cMessage(other)
@@ -190,6 +191,7 @@ void A22::copy(const A22& other)
 {
     this->priority = other.priority;
     this->timestamp = other.timestamp;
+    this->gateIndex = other.gateIndex;
 }
 
 void A22::parsimPack(omnetpp::cCommBuffer *b) const
@@ -197,6 +199,7 @@ void A22::parsimPack(omnetpp::cCommBuffer *b) const
     ::omnetpp::cMessage::parsimPack(b);
     doParsimPacking(b,this->priority);
     doParsimPacking(b,this->timestamp);
+    doParsimPacking(b,this->gateIndex);
 }
 
 void A22::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -204,6 +207,7 @@ void A22::parsimUnpack(omnetpp::cCommBuffer *b)
     ::omnetpp::cMessage::parsimUnpack(b);
     doParsimUnpacking(b,this->priority);
     doParsimUnpacking(b,this->timestamp);
+    doParsimUnpacking(b,this->gateIndex);
 }
 
 int A22::getPriority() const
@@ -224,6 +228,16 @@ void A22::setPriority(int priority)
 void A22::setTimestamp(::omnetpp::simtime_t timestamp)
 {
     this->timestamp = timestamp;
+}
+
+int A22::getGateIndex() const
+{
+    return this->gateIndex;
+}
+
+void A22::setGateIndex(int gateIndex)
+{
+    this->gateIndex = gateIndex;
 }
 
 class A22Descriptor : public omnetpp::cClassDescriptor
@@ -290,7 +304,7 @@ const char *A22Descriptor::getProperty(const char *propertyname) const
 int A22Descriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 2+basedesc->getFieldCount() : 2;
+    return basedesc ? 3+basedesc->getFieldCount() : 3;
 }
 
 unsigned int A22Descriptor::getFieldTypeFlags(int field) const
@@ -304,8 +318,9 @@ unsigned int A22Descriptor::getFieldTypeFlags(int field) const
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,
         FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<2) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<3) ? fieldTypeFlags[field] : 0;
 }
 
 const char *A22Descriptor::getFieldName(int field) const
@@ -319,8 +334,9 @@ const char *A22Descriptor::getFieldName(int field) const
     static const char *fieldNames[] = {
         "priority",
         "timestamp",
+        "gateIndex",
     };
-    return (field>=0 && field<2) ? fieldNames[field] : nullptr;
+    return (field>=0 && field<3) ? fieldNames[field] : nullptr;
 }
 
 int A22Descriptor::findField(const char *fieldName) const
@@ -329,6 +345,7 @@ int A22Descriptor::findField(const char *fieldName) const
     int base = basedesc ? basedesc->getFieldCount() : 0;
     if (fieldName[0]=='p' && strcmp(fieldName, "priority")==0) return base+0;
     if (fieldName[0]=='t' && strcmp(fieldName, "timestamp")==0) return base+1;
+    if (fieldName[0]=='g' && strcmp(fieldName, "gateIndex")==0) return base+2;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
@@ -343,8 +360,9 @@ const char *A22Descriptor::getFieldTypeString(int field) const
     static const char *fieldTypeStrings[] = {
         "int",
         "simtime_t",
+        "int",
     };
-    return (field>=0 && field<2) ? fieldTypeStrings[field] : nullptr;
+    return (field>=0 && field<3) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **A22Descriptor::getFieldPropertyNames(int field) const
@@ -399,6 +417,7 @@ std::string A22Descriptor::getFieldValueAsString(void *object, int field, int i)
     switch (field) {
         case 0: return long2string(pp->getPriority());
         case 1: return simtime2string(pp->getTimestamp());
+        case 2: return long2string(pp->getGateIndex());
         default: return "";
     }
 }
@@ -415,6 +434,7 @@ bool A22Descriptor::setFieldValueAsString(void *object, int field, int i, const 
     switch (field) {
         case 0: pp->setPriority(string2long(value)); return true;
         case 1: pp->setTimestamp(string2simtime(value)); return true;
+        case 2: pp->setGateIndex(string2long(value)); return true;
         default: return false;
     }
 }

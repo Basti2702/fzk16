@@ -29,7 +29,7 @@ network a22net
     submodules:
  	   nde[3] : node;
  	connections:
- 	    nde[0].gate++ <--> {  delay = 100ms; } <--> nde[1].gate++;
-        nde[1].gate++ <--> {  delay = 100ms; } <--> nde[2].gate++;
-        nde[2].gate++ <--> {  delay = 100ms; } <--> nde[0].gate++;
+ 	    nde[0].gate++ <--> {  delay = 1ms; } <--> nde[1].gate++;
+        nde[1].gate++ <--> {  delay = 1ms; } <--> nde[2].gate++;
+        nde[2].gate++ <--> {  delay = 1ms; } <--> nde[0].gate++;
 }

@@ -16,10 +16,10 @@
 #ifndef NETWORK22_H_
 #define NETWORK22_H_
 
-class network22 {
+class node {
 public:
-    network22();
-    virtual ~network22();
+    node();
+    virtual ~node();
 };
 
 #endif /* NETWORK22_H_ */

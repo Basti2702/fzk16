@@ -19,4 +19,5 @@
 message A22 {
     int priority;
     simtime_t timestamp;
+    int gateIndex;
 }

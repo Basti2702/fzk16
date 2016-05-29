@@ -25,6 +25,7 @@
  * {
  *     int priority;
  *     simtime_t timestamp;
+ *     int gateIndex;
  * }
  * </pre>
  */
@@ -33,6 +34,7 @@ class A22 : public ::omnetpp::cMessage
   protected:
     int priority;
     ::omnetpp::simtime_t timestamp;
+    int gateIndex;
 
   private:
     void copy(const A22& other);
@@ -55,6 +57,8 @@ class A22 : public ::omnetpp::cMessage
     virtual void setPriority(int priority);
     virtual ::omnetpp::simtime_t getTimestamp() const;
     virtual void setTimestamp(::omnetpp::simtime_t timestamp);
+    virtual int getGateIndex() const;
+    virtual void setGateIndex(int gateIndex);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const A22& obj) {obj.parsimPack(b);}
