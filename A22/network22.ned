@@ -29,7 +29,45 @@ network a22net
     submodules:
  	   nde[3] : node;
  	connections:
- 	    nde[0].gate++ <--> {  delay = 1ms; } <--> nde[1].gate++;
-        nde[1].gate++ <--> {  delay = 1ms; } <--> nde[2].gate++;
-        nde[2].gate++ <--> {  delay = 1ms; } <--> nde[0].gate++;
+ 	    nde[0].gate++ <--> {  delay = nde[0].delayTime; } <--> nde[1].gate++;
+        nde[1].gate++ <--> {  delay = nde[1].delayTime; } <--> nde[2].gate++;
+        nde[2].gate++ <--> {  delay = nde[2].delayTime; } <--> nde[0].gate++;
+}
+
+
+network a22netcompound
+{
+    submodules:
+        layer: Layer;
+}
+
+
+simple timestampsetter
+{
+ 	gates:
+	  inout gate[];
+}
+
+
+
+module Layer
+{
+ 	submodules:
+ 	    node0: node;
+ 	    node1: node;
+ 	    node2: node;
+ 	    timestampsetter0: timestampsetter;
+ 	    timestampsetter1: timestampsetter;
+ 	    timestampsetter2: timestampsetter;
+ 	    
+ 	    connections:
+ 	        node0.gate++ <--> { delay = node0.delayTime; } <--> timestampsetter0.gate++;
+ 	        timestampsetter0.gate++ <--> node1.gate++;
+ 	        
+ 	        node1.gate++ <--> { delay = node1.delayTime; } <--> timestampsetter1.gate++;
+ 	        timestampsetter1.gate++ <--> node2.gate++;
+ 	        
+ 	        node2.gate++ <--> { delay = node2.delayTime; } <--> timestampsetter2.gate++;
+ 	        timestampsetter2.gate++ <--> node0.gate++;
+ 	          
 }
