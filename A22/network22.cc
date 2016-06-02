@@ -18,15 +18,20 @@
 #include <omnetpp.h>
 #include "a22_m.h"
 
-using namespace omnetpp;
 
 class node : public cSimpleModule{
     private:
     simtime_t timer;  // timeout
     cMessage *timerEvent;  // holds pointer to the timeout self-message
     cMessage *event;
-    cMessage *finish;
+    cMessage *finishSim;
     A22 *respToMaster;
+
+    cOutVector latenzVector;
+    int numPrio0;
+    int numPrio1;
+    int numPrio2;
+    int numPrio3;
 
     public:
         int master;
@@ -36,6 +41,7 @@ class node : public cSimpleModule{
     virtual A22 *generateMessage();
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;
+    virtual void finish() override;
 };
 
 Define_Module(node);
@@ -44,30 +50,32 @@ node::node()
 {
     timerEvent = nullptr;
     event = nullptr;
-    finish = nullptr;
+    finishSim = nullptr;
 }
 
 node::~node()
 {
     cancelAndDelete(timerEvent);
     cancelAndDelete(event);
-    cancelAndDelete(finish);
+    cancelAndDelete(finishSim);
 }
 
 void node::initialize()
 {
     // Initialize variables
-  //  numSent = 0;
-   // numReceived = 0;
-   // WATCH(numSent);
-  //  WATCH(numReceived);
+      numPrio0 = 0;
+    numPrio1 = 0;
+    numPrio2 = 0;
+    numPrio3 = 0;
+    WATCH(numPrio0);
+    WATCH(numPrio1);
+    WATCH(numPrio2);
+    WATCH(numPrio3);
+    latenzVector.setName("Latenz");
 
- //   hopCountStats.setName("hopCountStats");
-//    hopCountStats.setRangeAutoUpper(0, 10, 1.5);
-//    hopCountVector.setName("HopCount");
 
     event = new cMessage("event");
-    finish = new cMessage("finish");
+    finishSim = new cMessage("finish");
 
     timer = 0.08;
     timerEvent = new cMessage("timerEvent");
@@ -82,12 +90,12 @@ void node::initialize()
         send(copy, "gate$o", 1);
     }*/
     scheduleAt(simTime()+timer, timerEvent);
-    scheduleAt(simTime()+2.0, finish);
+    scheduleAt(simTime()+2.0, finishSim);
 }
 
 void node::handleMessage(cMessage *msg)
 {
-    if(msg == finish)
+    if(msg == finishSim)
     {
        if(master == 1)
        {
@@ -106,6 +114,15 @@ void node::handleMessage(cMessage *msg)
             send(msg, "gate$o", 0);
             A22 *copy = (A22 *) msg->dup();
             send(copy, "gate$o", 1);
+
+            switch(msg->getPriority())
+            {
+                case 0: { numPrio0++; break; }
+                case 1: { numPrio1++; break; }
+                case 2: { numPrio2++; break; }
+                case 3: { numPrio3++; break; }
+            }
+
             EV << "Timer expired, sending new message with prio " << msg->getPriority();
             scheduleAt(simTime()+timer, timerEvent);
         }
@@ -141,9 +158,21 @@ void node::handleMessage(cMessage *msg)
     else
     {
         A22* ttmsg = check_and_cast<A22 *>(msg);
-        EV << "Received Response from Slave with latency " << simTime() - ttmsg->getTimestamp();
+
+        simtime_t latenz = simTime() - ttmsg->getTimestamp();
+        latenzVector.record(latenz);
+
+        EV << "Received Response from Slave with latency " << latenz;
         delete msg;
     }
+}
+
+void node::finish()
+{
+    recordScalar("#Prio0", numPrio0);
+    recordScalar("#Prio1", numPrio1);
+    recordScalar("#Prio2", numPrio2);
+    recordScalar("#Prio3", numPrio3);
 }
 
 A22* node::generateMessage()
@@ -156,8 +185,14 @@ A22* node::generateMessage()
     A22* msg = new A22(msgname);
 
     msg->setPriority(prio);
-    msg->setTimestamp(simTime());
-
+    if(master == 1)
+    {
+        msg->setTimestamp(-1);
+    }
+    else
+    {
+        msg->setTimestamp(simTime());
+    }
     EV << "stored prio: " << msg->getPriority() << "\n";
     return msg;
 }
