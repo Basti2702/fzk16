@@ -48,11 +48,11 @@ void LinNode::receiveFrame(cMessage *frame) {
 void LinNode::sendLinRequest(int messageId) {
 
     std::cerr << "sending " << messageId << std::endl;
-	int n = gateSize("outgate");
+	int n = gateSize("gate");
     for (int i = 0; i < n; i++) {
     	LinRequestFrame *frame = new LinRequestFrame();
     	frame->setMessageId(messageId);
-    	send(frame, "outgate", i);
+    	send(frame, "gate$o", i);
 
     }
 
@@ -64,7 +64,7 @@ void LinNode::sendLinResponse(int messageId, int response) {
     frame->setMessageId(messageId);
     frame->setResponse(response);
 
-    send(frame, "outgate");
+    send(frame, "gate$o");
 
 }
 

@@ -44,6 +44,11 @@ protected:
     simtime_t sendTime;
     cMessage *timerEvent;
     cMessage *checkCollisionEvent;
+    cOutVector latenzVector;
+    cOutVector eventTriggerVector;
+    cOutVector sporadicVector;
+    cOutVector unconditionalVector;
+    cOutVector collisionVector;
 
     uint counter;
     int sporadicMessageID;
