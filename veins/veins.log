@@ -1,0 +1,761 @@
+DEBUG:root:Logging to veins.log
+DEBUG:root:Logging to veins.log
+INFO:root:Listening on port 1234
+DEBUG:root:Connection from 127.0.0.1 on port 56940
+DEBUG:root:Handling connection from 127.0.0.1 on port 56940
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 300
+DEBUG:root:Got TraCI command of length 295
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="erlangen.net.xml"/>
+  <copy file="erlangen.rou.xml"/>
+  <copy file="erlangen.poly.xml"/>
+  <copy file="erlangen.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-IAARZ3
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 58670
+INFO:root:Starting SUMO (sumo-gui -c erlangen.sumo.cfg) on port 58670, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c erlangen.sumo.cfg) on port 58670 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c erlangen.sumo.cfg) on port 58670 (try 2)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c erlangen.sumo.cfg) on port 58670 (try 3)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467879290</start>
+	<end>1467879410</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 56940
+WARNING:root:Keyboard interrupt.
+INFO:root:Shutting down.
+DEBUG:root:Logging to veins.log
+INFO:root:Listening on port 1234
+DEBUG:root:Connection from 127.0.0.1 on port 56946
+DEBUG:root:Handling connection from 127.0.0.1 on port 56946
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 359
+DEBUG:root:Got TraCI command of length 354
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.high.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtHigh.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-wZ7MMM
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 50984
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 50984, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 50984 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 50984 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467880127</start>
+	<end>1467880167</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 56946
+DEBUG:root:Connection from 127.0.0.1 on port 56961
+DEBUG:root:Handling connection from 127.0.0.1 on port 56961
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 359
+DEBUG:root:Got TraCI command of length 354
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.high.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtHigh.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-pQOT1G
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 35799
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 35799, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 35799 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 35799 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467880200</start>
+	<end>1467880246</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 56961
+DEBUG:root:Connection from 127.0.0.1 on port 56977
+DEBUG:root:Handling connection from 127.0.0.1 on port 56977
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 357
+DEBUG:root:Got TraCI command of length 352
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.low.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtLow.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-cOkvtG
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 47728
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 47728, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 47728 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 47728 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467880482</start>
+	<end>1467880553</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 56977
+WARNING:root:Keyboard interrupt.
+INFO:root:Shutting down.
+DEBUG:root:Logging to veins.log
+INFO:root:Listening on port 1234
+DEBUG:root:Connection from 127.0.0.1 on port 56994
+DEBUG:root:Handling connection from 127.0.0.1 on port 56994
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 357
+DEBUG:root:Got TraCI command of length 352
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.low.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtLow.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-KArjut
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 35247
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 35247, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 35247 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 35247 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467880589</start>
+	<end>1467880615</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 56994
+DEBUG:root:Connection from 127.0.0.1 on port 57009
+DEBUG:root:Handling connection from 127.0.0.1 on port 57009
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 308
+DEBUG:root:Got TraCI command of length 303
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="erlangen.net.xml"/>
+  <copy file="erlangen.rou.xml"/>
+  <copy file="erlangen.poly.xml"/>
+  <copy file="erlangen.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins (Kopie)/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-uIIGFJ
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins (Kopie)/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 36703
+INFO:root:Starting SUMO (sumo-gui -c erlangen.sumo.cfg) on port 36703, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c erlangen.sumo.cfg) on port 36703 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c erlangen.sumo.cfg) on port 36703 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467880661</start>
+	<end>1467880676</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57009
+DEBUG:root:Connection from 127.0.0.1 on port 57012
+DEBUG:root:Handling connection from 127.0.0.1 on port 57012
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 357
+DEBUG:root:Got TraCI command of length 352
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.low.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtLow.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-q8qhHA
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 53084
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 53084, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 53084 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 53084 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467880811</start>
+	<end>1467880826</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57012
+DEBUG:root:Connection from 127.0.0.1 on port 57027
+DEBUG:root:Handling connection from 127.0.0.1 on port 57027
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 357
+DEBUG:root:Got TraCI command of length 352
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.low.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtLow.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-pjaXZQ
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 50245
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 50245, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 50245 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 50245 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467881048</start>
+	<end>1467881062</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57027
+DEBUG:root:Connection from 127.0.0.1 on port 57042
+DEBUG:root:Handling connection from 127.0.0.1 on port 57042
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 357
+DEBUG:root:Got TraCI command of length 352
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.low.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtLow.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-k0YiHX
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 52421
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 52421, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 52421 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtLow.sumo.cfg) on port 52421 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467881108</start>
+	<end>1467881168</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57042
+DEBUG:root:Connection from 127.0.0.1 on port 57058
+DEBUG:root:Handling connection from 127.0.0.1 on port 57058
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 359
+DEBUG:root:Got TraCI command of length 354
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.high.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtHigh.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-HbF08J
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 33003
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 33003, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 33003 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 33003 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467881185</start>
+	<end>1467881242</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57058
+DEBUG:root:Connection from 127.0.0.1 on port 57073
+DEBUG:root:Handling connection from 127.0.0.1 on port 57073
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 359
+DEBUG:root:Got TraCI command of length 354
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.high.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtHigh.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-K2jiCk
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 37245
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 37245, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 37245 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 37245 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467881411</start>
+	<end>1467882046</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57073
+DEBUG:root:Connection from 127.0.0.1 on port 57089
+DEBUG:root:Handling connection from 127.0.0.1 on port 57089
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 359
+DEBUG:root:Got TraCI command of length 354
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.high.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtHigh.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-smm351
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 46078
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 46078, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 46078 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 46078 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467882057</start>
+	<end>1467882064</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57089
+DEBUG:root:Connection from 127.0.0.1 on port 57107
+DEBUG:root:Handling connection from 127.0.0.1 on port 57107
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 359
+DEBUG:root:Got TraCI command of length 354
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.high.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtHigh.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-lNyz6m
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 48901
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 48901, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 48901 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 48901 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467882473</start>
+	<end>1467882484</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57107
+DEBUG:root:Connection from 127.0.0.1 on port 57122
+DEBUG:root:Handling connection from 127.0.0.1 on port 57122
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 359
+DEBUG:root:Got TraCI command of length 354
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.high.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtHigh.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-6zFtWd
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 41611
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 41611, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 41611 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 41611 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467882794</start>
+	<end>1467882904</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57122
+DEBUG:root:Connection from 127.0.0.1 on port 57138
+DEBUG:root:Handling connection from 127.0.0.1 on port 57138
+DEBUG:root:Got TraCI message of length 2
+DEBUG:root:Got TraCI command of length 1
+DEBUG:root:Got TraCI command 0x0
+DEBUG:root:Got CMD_GETVERSION
+DEBUG:root:Got TraCI message of length 359
+DEBUG:root:Got TraCI command of length 354
+DEBUG:root:Got TraCI command 0x75
+DEBUG:root:Got CMD_FILE_SEND for "sumo-launchd.launch.xml"
+DEBUG:root:Got CMD_FILE_SEND with data "<launch>
+  <copy file="ingolstadt.net.xml"/>
+  <copy file="ingolstadt.buildings.xml"/>
+  <copy file="ingolstadt.rou.high.xml"/>
+  <copy file="ingolstadt.poly.xml"/>
+  <copy file="ingolstadtHigh.sumo.cfg" type="config"/>
+  <basedir path="/home/edu/fzk/fzk21/Downloads/veins/examples/veins/"/>
+  <seed value="0"/>
+</launch>
+"
+DEBUG:root:Creating temporary directory...
+DEBUG:root:Temporary dir is /tmp/sumo-launchd-tmp-aW7heu
+DEBUG:root:Base dir is /home/edu/fzk/fzk21/Downloads/veins/examples/veins/
+DEBUG:root:Seed is 0
+DEBUG:root:Finding free port number...
+DEBUG:root:Claiming lock on port
+DEBUG:root:...found port 44182
+INFO:root:Starting SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 44182, seed 0
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 44182 (try 1)
+DEBUG:root:Error ([Errno 111] Connection refused)
+DEBUG:root:Connecting to SUMO (sumo-gui -c ingolstadtHigh.sumo.cfg) on port 44182 (try 2)
+DEBUG:root:Releasing lock on port
+DEBUG:root:Starting proxy mode
+DEBUG:root:Done with proxy mode
+DEBUG:root:Done with proxy mode, killing SUMO
+DEBUG:root:SIGTERM
+INFO:root:Done running SUMO
+DEBUG:root:Cleaning up
+DEBUG:root:Result: "<?xml version="1.0"?>
+<status>
+	<exit-code>-15</exit-code>
+	<start>1467882949</start>
+	<end>1467883001</end>
+	<status>Exited with error code -15</status>
+	<stdout><![CDATA[Loading configuration... done.
+]]></stdout>
+	<stderr><![CDATA[]]></stderr>
+</status>
+"
+DEBUG:root:Closing connection from 127.0.0.1 on port 57138

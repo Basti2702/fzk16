@@ -1,0 +1,7 @@
+DEBUG:root:Logging to sumo.log
+DEBUG:root:Logging to sumo.log
+INFO:root:Listening on port 1234
+WARNING:root:Keyboard interrupt.
+INFO:root:Shutting down.
+DEBUG:root:Logging to sumo.log
+INFO:root:Listening on port 1234
